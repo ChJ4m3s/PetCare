@@ -3,42 +3,25 @@ import { View, Image, StyleSheet, Text, ScrollView } from "react-native";
 import { getPets } from "../utilities/APIs";
 import { Container } from "../components/Container";
 import { colors } from "../assets/colors"
-import {WarningCircle, Coins, CaretRight} from 'phosphor-react-native';
+import {
+    WarningCircle,
+    CaretRight,
+    Plus,
+    SmileySad,
+    SmileyMeh,
+    Smiley
+} from 'phosphor-react-native';
+import { IconButton } from "react-native-paper";
 
 export const Home = (props: {
     navigation: {
         setOptions: (input: object) => void
     }
 }) => {
-    const {navigation} = props;
     const pets = getPets('mock');
     const pet = pets[0];
 
-    React.useLayoutEffect(() => {
-        navigation.setOptions({
-            headerRight: () => <View
-                style={{
-                    flexDirection: 'row',
-                    marginRight: 20,
-                    borderStyle: 'solid',
-                    borderWidth: 0.5,
-                    paddingVertical: 3,
-                    paddingHorizontal: 10,
-                    borderRadius: 100,
-                    borderColor: '#bc6c25'
-                }}
-            >
-                <Coins
-                    style={{marginRight: 10}}
-                    color={"#bc6c25"}
-                    size={20}
-                />
-                <Text>
-                    124
-                </Text>
-            </View>
-        });
-    }, [navigation]);
+
 
     return <View style={{flex: 1, backgroundColor: '#ffffff'}}>
         <ScrollView>
@@ -251,8 +234,74 @@ export const Home = (props: {
                     <WarningCircle color={"#d62828"} size={25} />
                     <CaretRight size={25} />
                 </View>
+                <View style={{
+                    borderRadius: 20,
+                    backgroundColor: '#f1f1f1',
+                    flex: 1,
+                    padding: 20,
+                    marginTop: 20,
+                    flexDirection: 'row'
+                }}>
+                    <Text style={{fontWeight: 'bold', flex: 1, fontSize: 20}}>Settings</Text>
+                    <CaretRight size={25} />
+                </View>
+                <View style={{
+                    marginTop: 20
+                }}>
+                    <Text style={{fontWeight: 'bold', fontSize: 20, textAlign: 'center'}}>
+                        How is your pet doing?
+                    </Text>
+                    <View style={{
+                        flexDirection: 'row',
+                        flex: 1,
+                        marginTop: 20
+                    }}>
+                        <View style={{flex: 1, alignItems: 'center'}}>
+                            <IconButton
+                                style={{height: 60, width: '100%'}}
+                                icon={() => <SmileySad
+                                    size={60}
+                                    color={"#adb5bd"}
+                                />}
+                                onPress={() => null}
+                            />
+                        </View>
+                        <View style={{flex: 1, alignItems: 'center'}}>
+                            <IconButton
+                                style={{height: 60, width: '100%'}}
+                                icon={() => <SmileyMeh
+                                    size={60}
+                                    color={"#adb5bd"}
+                                />}
+                                onPress={() => null}
+                            />
+                        </View>
+                        <View style={{flex: 1, alignItems: 'center'}}>
+                            <IconButton
+                                style={{height: 60, width: '100%'}}
+                                icon={() => <Smiley
+                                    size={60}
+                                    color={"#adb5bd"}
+                                />}
+                                onPress={() => null}
+                            />
+                        </View>
+                    </View>
+                </View>
             </Container>
         </ScrollView>
+        <IconButton
+            icon={() => <Plus color={"#ffffff"} />}
+            style={{
+                position: 'absolute',
+                bottom: 20,
+                right: 20,
+                backgroundColor: colors.primary,
+            }}
+            onPress={() => {
+
+            }}
+        />
     </View>
 }
 

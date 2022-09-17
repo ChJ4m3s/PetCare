@@ -1,20 +1,29 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import {Ruler} from 'phosphor-react-native';
+import {Ruler, Scales} from 'phosphor-react-native';
 import { colors } from "../assets/colors";
 
 export const HistoryBubble = (props: {measure: Measure}) => {
     const {measure} = props;
+    const {category, value, unit} = measure;
 
     return <View style={styles.bubble}>
         <View style={styles.type}>
             <View style={styles.iconContainer}>
-                <Ruler
-                    size={30}
-                    color={'#ffffff'}
-                    style={styles.icon}
-                    weight={'bold'}
-                />
+                {
+                    category === "weight" ? <Scales
+                        size={30}
+                        color={'#ffffff'}
+                        style={styles.icon}
+                        weight={'bold'}
+                    />   : <Ruler
+                        size={30}
+                        color={'#ffffff'}
+                        style={styles.icon}
+                        weight={'bold'}
+                    />
+                }
+
             </View>
         </View>
         <View style={styles.space} />

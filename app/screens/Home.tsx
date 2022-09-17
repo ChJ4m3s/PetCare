@@ -13,15 +13,9 @@ import {
 } from 'phosphor-react-native';
 import { IconButton } from "react-native-paper";
 
-export const Home = (props: {
-    navigation: {
-        setOptions: (input: object) => void
-    }
-}) => {
+export const Home = () => {
     const pets = getPets('mock');
     const pet = pets[0];
-
-
 
     return <View style={{flex: 1, backgroundColor: '#ffffff'}}>
         <ScrollView>

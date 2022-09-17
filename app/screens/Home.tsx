@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet, Text, ScrollView } from "react-native";
+import { View, Image, StyleSheet, Text, ScrollView, Pressable, Linking } from "react-native";
 import { getPets } from "../utilities/APIs";
 import { Container } from "../components/Container";
 import { colors } from "../assets/colors"
@@ -216,18 +216,21 @@ export const Home = () => {
                         </View>
                     </View>
                 </View>
-                <View style={{
-                    borderRadius: 20,
-                    backgroundColor: '#f1f1f1',
-                    flex: 1,
-                    padding: 20,
-                    marginTop: 20,
-                    flexDirection: 'row'
-                }}>
+                <Pressable
+                    onPress={() => Linking.openURL("https://drive.google.com/file/d/1sZlMDTlgaaT8DUlibSef9GOMIjTvfzyV/view?usp=sharing")}
+                    style={{
+                        borderRadius: 20,
+                        backgroundColor: '#f1f1f1',
+                        flex: 1,
+                        padding: 20,
+                        marginTop: 20,
+                        flexDirection: 'row'
+                    }}
+                >
                     <Text style={{fontWeight: 'bold', flex: 1, fontSize: 20}}>Immunity check</Text>
                     <WarningCircle color={"#d62828"} size={25} />
                     <CaretRight size={25} />
-                </View>
+                </Pressable>
                 <View style={{
                     borderRadius: 20,
                     backgroundColor: '#f1f1f1',

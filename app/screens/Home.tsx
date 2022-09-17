@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Image, StyleSheet, Text, ScrollView } from "react-native";
+import { View, Button, Image, StyleSheet, Text, ScrollView } from "react-native";
 import { getHistory, getPets } from "../utilities/APIs";
 import { Title } from "../components/Title";
 import { Container } from "../components/Container";
 import { HistoryBubble } from "./HistoryBubble";
 import { colors } from "../assets/colors"
-import {CircleWavyCheck} from 'phosphor-react-native';
+import {CircleWavyCheck, Plus} from 'phosphor-react-native';
+import { IconButton } from "react-native-paper";
 
 export const Home = () => {
     const pets = getPets('mock');
@@ -120,6 +121,10 @@ export const Home = () => {
                         <View style={{
                             flex: 3.2,
                             backgroundColor: '#a3b18a',
+                        }} />
+                        <View style={{
+                            flex: 30,
+                            backgroundColor: '#ffffff',
                             borderBottomRightRadius: 10,
                             borderTopRightRadius: 10
                         }} />
@@ -219,6 +224,18 @@ export const Home = () => {
                 }
             </View>
         </ScrollView>
+        <IconButton
+            icon={() => <Plus color={'#ffffff'} size={30} />}
+            style={{
+                position: 'absolute',
+                bottom: 20,
+                right: 20,
+                backgroundColor: '#a2d2ff',
+            }}
+            mode={"contained"}
+            size={30}
+            onPress={() => null}
+        />
     </Container>;
 }
 

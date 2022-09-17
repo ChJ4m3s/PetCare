@@ -53,6 +53,7 @@ export const Home = () => {
                 backgroundColor: '#f1f1f1',
                 flex: 1,
                 padding: 20,
+                marginTop: 20
             }}>
                 <Text style={{fontWeight: 'bold'}}>
                     Active

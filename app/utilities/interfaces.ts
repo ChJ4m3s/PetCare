@@ -7,14 +7,14 @@ interface Pet {
     avatar: string
 }
 
-interface Measures {
+interface Measure {
     uuid: string,
     petId: string,
     unit: string,
     category: string,
     value: number,
     timestamp: string,
-    note: string,
+    note?: string,
     source: string
 }
 
@@ -23,4 +23,10 @@ interface Owner {
     fistName: string,
     lastName: string,
     email: string
+}
+
+interface Food {
+    uuid: string,
+    name: string,
+    nutrients: string
 }

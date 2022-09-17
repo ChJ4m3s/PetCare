@@ -1,11 +1,7 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Home} from "./screens/Home";
 import {CloudLightning, Coins, WarningCircle} from 'phosphor-react-native';
 import {SafeAreaView, Text, View} from "react-native";
 import React from "react";
-
-
-const Tab = createBottomTabNavigator();
 
 export default function App() {
   return <SafeAreaView style={{flex: 1}}>

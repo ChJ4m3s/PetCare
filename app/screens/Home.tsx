@@ -4,7 +4,8 @@ import { getHistory, getPets } from "../utilities/APIs";
 import { Title } from "../components/Title";
 import { Container } from "../components/Container";
 import { HistoryBubble } from "./HistoryBubble";
-import { colors } from "../assets/colors";
+import { colors } from "../assets/colors"
+import {CircleWavyCheck} from 'phosphor-react-native';
 
 export const Home = () => {
     const pets = getPets('mock');
@@ -86,9 +87,131 @@ export const Home = () => {
                 <View style={{flex: 1}}>
 
                 </View>
+                <Text style={{fontWeight: 'bold', marginTop: 20}}>
+                    Kilocalories
+                </Text>
+                <View style={{flex: 1, marginTop: 5}}>
+                    <View style={{
+                        height: 10,
+                        flexDirection: 'row',
+                    }}>
+                        <View style={{
+                            flex: 13,
+                            backgroundColor: colors.primary,
+                            borderBottomLeftRadius: 10,
+                            borderTopLeftRadius: 10
+                        }} />
+                        <View style={{
+                            flex: 8.8,
+                            backgroundColor: '#cdb4db',
+                        }} />
+                        <View style={{
+                            flex: 0.2,
+                            backgroundColor: '#ffc8dd',
+                        }} />
+                        <View style={{
+                            flex: 7.8,
+                            backgroundColor: '#bde0fe',
+                        }} />
+                        <View style={{
+                            flex: 67,
+                            backgroundColor: '#ffafcc',
+                        }} />
+                        <View style={{
+                            flex: 3.2,
+                            backgroundColor: '#a3b18a',
+                            borderBottomRightRadius: 10,
+                            borderTopRightRadius: 10
+                        }} />
+                    </View>
+                    <View style={{flex: 1, marginTop: 20, flexDirection: 'row'}}>
+                        <View style={{flex: 1}}>
+                            <View style={{flexDirection: 'row'}}>
+                                <View
+                                    style={{
+                                        height: 10,
+                                        width: 10,
+                                        marginRight: 10,
+                                        borderRadius: 100,
+                                        backgroundColor: colors.primary
+                                    }}
+                                />
+                                <Text>Protein</Text>
+                            </View>
+                            <View style={{flexDirection: 'row'}}>
+                                <View
+                                    style={{
+                                        height: 10,
+                                        width: 10,
+                                        marginRight: 10,
+                                        borderRadius: 100,
+                                        backgroundColor: '#bde0fe'
+                                    }}
+                                />
+                                <Text>Carbs</Text>
+                            </View>
+                        </View>
+                        <View style={{flex: 1}}>
+                            <View style={{flexDirection: 'row'}}>
+                                <View
+                                    style={{
+                                        height: 10,
+                                        width: 10,
+                                        marginRight: 10,
+                                        borderRadius: 100,
+                                        backgroundColor: '#cdb4db'
+                                    }}
+                                />
+                                <Text>Fat</Text>
+                            </View>
+                            <View style={{flexDirection: 'row'}}>
+                                <View
+                                    style={{
+                                        height: 10,
+                                        width: 10,
+                                        marginRight: 10,
+                                        borderRadius: 100,
+                                        backgroundColor: '#ffafcc'
+                                    }}
+                                />
+                                <Text>Humidity</Text>
+                            </View>
+                        </View>
+                        <View style={{flex: 1}}>
+                            <View style={{flexDirection: 'row'}}>
+                                <View
+                                    style={{
+                                        height: 10,
+                                        width: 10,
+                                        marginRight: 10,
+                                        borderRadius: 100,
+                                        backgroundColor: "#ffc8dd"
+                                    }}
+                                />
+                                <Text>Fiber</Text>
+                            </View>
+                            <View style={{flexDirection: 'row'}}>
+                                <View
+                                    style={{
+                                        height: 10,
+                                        width: 10,
+                                        marginRight: 10,
+                                        borderRadius: 100,
+                                        backgroundColor: "#a3b18a"
+                                    }}
+                                />
+                                <Text>Micronutrients</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+                <View style={{marginTop: 20, flexDirection: 'row'}}>
+                    <CircleWavyCheck size={20} style={{marginRight: 10}} color="#588157" />
+                    <Text>Immunity check</Text>
+                </View>
             </View>
             <View style={styles.history}>
-                <Title title={"History"} />
+                <Title title={"Details"} />
                 {
                     history.map((el: Measure) => {
                         return <HistoryBubble measure={el} />

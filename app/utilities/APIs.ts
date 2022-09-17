@@ -24,9 +24,9 @@ export const getHistory = (petId: string) => {
         {
             uuid: "string",
             petId: "string",
-            unit: "Kg",
-            category: "weight",
-            value: 15,
+            unit: "cm",
+            category: "measure",
+            value: 43,
             timestamp: "2022-09-17T10:10:23",
             source: "owner"
         },

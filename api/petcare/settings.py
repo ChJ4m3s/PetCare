@@ -91,11 +91,7 @@ STATIC_URL = '/static/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'sass_processor.finders.CssFinder',
 )
-
-# Django Sass
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'petcare/static')
 
 # Url configurations
 DOMAIN = "petcare.com"

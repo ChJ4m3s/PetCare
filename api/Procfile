@@ -1,1 +1,1 @@
-web: gunicorn petcare-hackzurich.wsgi --log-file -
+web: gunicorn petcare.wsgi --log-file -

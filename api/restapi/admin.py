@@ -49,23 +49,6 @@ class UserProfileAdmin(DefaultAdminClass):
     list_select_related = (
         'user',
     )
-    fieldsets = (
-        (None, {
-            'fields': (
-                'uuid',
-                'full_name',
-                'email',
-                'username',
-            ),
-        }),
-        ('Timestamps', {
-            'classes': ('collapse', 'wide'),
-            'fields': (
-                'creation_date',
-                'last_change_date',
-            ),
-        }),
-    )
 
     @admin.display(boolean=True)
     def has_desc(self, obj):
